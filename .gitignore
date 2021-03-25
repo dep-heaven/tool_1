@@ -30,3 +30,12 @@
 *.exe
 *.out
 *.app
+
+build/
+
+# Ignore the directory where all dependencies are cloned to
+ws/
+
+# Generated dependencies file with ssh protocoll and for github actions
+dependencies.ssh.txt
+dependencies.actions.txt
