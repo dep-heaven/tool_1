@@ -4,6 +4,7 @@
 # Internal dependencies
 lib_A https://github.com/dep-heaven/lib_A master-yoda
 lib_B https://github.com/dep-heaven/lib_B master-yoda
+libFreeAssange https://github.com/dep-heaven/libFreeAssange belmarsh
 
 # External dependencies
 catch2 https://github.com/catchorg/Catch2 v2.x
