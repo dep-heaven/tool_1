@@ -3,9 +3,6 @@
 ################################################################################
 # General settings
 
-# If we move our private repositories, change this variable
-GITHUB_ORGANIZATION_URL=https://github.com/DroidDrive
-
 # If you change this variable, please ensure it is also added to .gitignore
 WORKSPACE=ws
 DEPENDENCIES_FILE=dependencies.txt
@@ -121,20 +118,12 @@ ensure_is_cloned() {
         local REMOTE_REPO=$(git -C ${dir} remote -v || echo "nothing")
         local reponame=$(echo $url | sed -E "s/.+github\.com\/(.+)/\1/g")
         if [[ ${REMOTE_REPO} != *"${reponame}"* ]]; then
-            if [[ ${REMOTE_REPO} != *"duckbrain_umbrella"* ]]; then
-                echo
-                echo -e "\e[31m!!!! ===> THIS IS AN ERROR OR INCONSISTENCY <=== !!!!\e[0m"
-                echo -e "\e[31mI expected ${url}\e[0m"
-                echo
-                ERROR=true
-            else
-                echo
-                echo -e "\e[31m!!!! ===> THIS IS AN ERROR OR INCONSISTENCY <=== !!!!\e[0m"
-                echo -e "\e[31mI expected ${url}, "
-                echo -e "but ${dir} seems not to be under version control.\e[0m"
-                echo -e
-                ERROR=true
-            fi
+            echo
+            echo -e "\e[31m!!!! ===> THIS IS AN ERROR OR INCONSISTENCY <=== !!!!\e[0m"
+            echo -e "\e[31mI expected ${url}, "
+            echo -e "but ${dir} seems not to be under version control.\e[0m"
+            echo -e
+            ERROR=true
         else
             if [[ $VERBOSE == 1 ]]; then
                 echo "${dir} already exists, its remote repositories are"
