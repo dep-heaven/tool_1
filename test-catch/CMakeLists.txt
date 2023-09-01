@@ -2,6 +2,10 @@ cmake_minimum_required(VERSION 3.16)
 
 include(CTest)
 
+message("Catch path is '${Catch2_SOURCE_DIR}/extras'")
+list(APPEND CMAKE_MODULE_PATH ${Catch2_SOURCE_DIR}/contrib)
+include(Catch)
+
 ################################################################################
 # Define Unit Tests  
 ################################################################################
