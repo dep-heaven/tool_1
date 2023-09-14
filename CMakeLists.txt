@@ -68,12 +68,13 @@ target_link_libraries(
 )
 
 message("WARNING! Something is still wrong here!")
+FetchContent_GetProperties("catch2")
 message("   RepoMan should populate selected name, not original name")
 message("==> Toplevel: catch2_SOURCE_DIR = '${catch2_SOURCE_DIR}'")
 message("==> Toplevel: Catch2_SOURCE_DIR = '${Catch2_SOURCE_DIR}'")
-
+FetchContent_GetProperties("lib_A")
+message("==> Toplevel: lib_a_SOURCE_DIR = '${lib_a_SOURCE_DIR}'")
 message("==> Toplevel: lib_A_SOURCE_DIR = '${lib_A_SOURCE_DIR}'")
-
 
 if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
     enable_testing()
